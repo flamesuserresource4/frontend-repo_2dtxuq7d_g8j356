@@ -3,6 +3,7 @@ import Hero3D from './components/Hero3D';
 import TechStack from './components/TechStack';
 import AboutPreview from './components/AboutPreview';
 import ContactStrip from './components/ContactStrip';
+import LofiAudio from './components/LofiAudio';
 import { ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -29,10 +30,10 @@ function ProjectCard({ title, stack, description, github, live, featured = false
       transition={{ duration: 0.5 }}
       className={
         'group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-white/80 backdrop-blur transition ' +
-        (featured ? 'ring-1 ring-fuchsia-400/20 shadow-[0_0_60px_-20px] shadow-fuchsia-500/30' : '')
+        (featured ? 'ring-1 ring-rose-300/20 shadow-[0_0_60px_-20px] shadow-rose-300/30' : '')
       }
     >
-      <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none bg-gradient-to-br from-fuchsia-500/10 to-indigo-500/10" />
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100 bg-gradient-to-br from-rose-400/10 to-amber-300/10" />
       <div className="relative">
         <h3 className="text-xl font-semibold text-white">{title}</h3>
         <div className="mt-2 text-sm text-white/60">{stack}</div>
@@ -67,7 +68,10 @@ function ProjectCard({ title, stack, description, github, live, featured = false
 export default function App() {
   return (
     <div className="min-h-screen bg-[#0b0b14] text-white antialiased">
-      {/* Hero with immersive Spline scene and blossoms */}
+      {/* Floating audio controls for lofi background */}
+      <LofiAudio />
+
+      {/* Hero with old Japan vibes */}
       <Hero3D />
 
       {/* Tech marquee */}
